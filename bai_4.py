@@ -1,9 +1,15 @@
-class Solution:
-    def addDigits(self, num: int) -> int:
-        num = str(num)
-        while len(num) > 1 :
-            a = 0 
-            for i in range(len(num)) :
-                a = a + int(num[i])
-            num = str(a)
-        return int(num) 
+class Solution(object):
+    def findMedianSortedArrays(self, nums1, nums2):
+        # gộp hai mảng và sắp xếp 
+        nums= nums1+nums2
+        n=len(nums)
+        nums.sort()
+        # tính medium 
+        if n%2==0:
+            medium=(nums[n//2]+nums[n//2-1])/2.0
+        else:
+            medium=nums[n//2]
+        return medium 
+         
+
+      
